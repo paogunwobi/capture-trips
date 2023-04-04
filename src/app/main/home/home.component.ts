@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 // import { SwiperOptions } from 'swiper';
 
 @Component({
@@ -20,8 +21,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   config: any;
   index: any;
 
-  constructor() {
-  }
+  constructor(private router: Router) { }
 
   ngAfterViewInit() {
     // this.usefulSwiper.config = this.swiperconfig;
@@ -39,6 +39,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     } else {
       html.classList.remove('dark-mode');
     }
+  }
+
+
+  navigateToDetails() {
+    this.router.navigate(['/details']);
   }
 
 }
